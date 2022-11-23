@@ -1,0 +1,16 @@
+import sqlite3
+
+koneksikeDB = sqlite3.connect('cars.db')
+
+k = koneksikeDB.cursor()
+
+k.execute(
+    """
+        SELECT * FORM TBCars
+    """
+    )
+
+print(k.fetchall())
+
+koneksikeDB.commit()
+koneksikeDB.close()
