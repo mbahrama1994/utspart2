@@ -1,0 +1,25 @@
+import sqlite3
+
+koneksikeDB = sqlite3.connect('cars.db')
+
+db = koneksikeDB.cursor()
+
+db.execute(
+    """
+        INSERT INTO TBCars (
+                carID,
+                carbrand,
+                carmodel,
+                carprice,
+        )
+        VALUES (
+            "101"
+            "HONDA"
+            "ACCORD"
+            "150"
+        )
+    """
+    )
+
+koneksikeDB.commit()
+koneksikeDB.close()
