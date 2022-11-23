@@ -1,0 +1,19 @@
+import sqlite3
+
+koneksikeDB = sqlite3.connect('cars.db')
+
+db = koneksikeDB.cursor()
+
+db.execute(
+    """
+        CREATE TABLE TBCars (
+                carID,
+                carbrand,
+                carmodel,
+                carprice,
+        )
+    """
+    );
+
+koneksikeDB.commit()
+koneksikeDB.close()
