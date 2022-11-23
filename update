@@ -1,0 +1,18 @@
+import sqlite3
+
+koneksikeDB = sqlite3.connect('cars.db')
+
+db = koneksikeDB.cursor()
+
+db.execute(
+    """
+        UPDATE TBCars SET
+            carprice="125"
+        WHERE 
+            carID="101"
+
+    """
+    );
+
+koneksikeDB.commit()
+koneksikeDB.close()
